@@ -1,6 +1,6 @@
 <?php
 
-//namespace App\Http\Entities\Users;
+namespace App\Http\Entities\User;
 
 use App\Http\Entities\MainEntity;
 
