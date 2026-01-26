@@ -4,7 +4,7 @@ namespace App\Http\Entities\Post;
 
 use App\Http\Entities\MainEntity;
 
-class Like extends MainEntity
+class PostLike extends MainEntity
 {
     public ?int $id;
     public ?int $idUser;

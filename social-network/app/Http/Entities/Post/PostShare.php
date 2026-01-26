@@ -4,7 +4,7 @@ namespace App\Http\Entities\Post;
 
 use App\Http\Entities\MainEntity;
 
-class Share extends MainEntity
+class PostShare extends MainEntity
 {
     public ?int $id = null;
     public ?int $idPost = null;

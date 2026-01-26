@@ -4,7 +4,7 @@ namespace App\Http\Entities\Post;
 
 use App\Http\Entities\MainEntity;
 
-class Comment extends MainEntity
+class PostComment extends MainEntity
 {
     public ?int $id;
     public ?int $idPost;
