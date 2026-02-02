@@ -7,7 +7,8 @@ use App\Http\Entities\MainEntity;
 class UserProfile extends MainEntity
 {
     public ?int $id = null;
+    public ?int $userId = null;
     public ?string $userName = null;
-    public $logo = null;
-    public ?string $bio = null;
+    public $profilePicture = null;
+    public ?string $updatedAt = null;
 }

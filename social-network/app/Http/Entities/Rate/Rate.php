@@ -7,10 +7,11 @@ use App\Http\Entities\MainEntity;
 class Rate extends MainEntity
 {
     public ?int $id;
-    public ?int $idUser;
     public ?int $rate;
-    public ?int $idTargetUser;
+    public ?int $userId;
+    public ?int $targetUserId;
     public ?string $targetTableName;
-    public ?int $idTableName;
+    public ?int $targetTableId;
     public ?string $createdAt;
+    public ?string $updatedAt;
 }

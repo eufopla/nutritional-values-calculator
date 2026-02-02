@@ -10,7 +10,7 @@ class User extends MainEntity
     public ?string $firstName = null;
     public ?string $lastName = null;
     public ?string $email = null;
-    public ?int $email_verified = 0;
+    public ?int $verifiedEmail = 0;
     public ?string $login = null;
     public ?string $password = null;
     public int $passwordChangeNeeded = 0;
@@ -21,10 +21,10 @@ class User extends MainEntity
     public ?int $ban = 0;
     public ?string $validationToken = null;
     public ?string $validationTokenExpirationDate = null;
-    public int $idProfile = 0;
+    public int $profileId = 0;
     public ?string $civility = null;
     public ?string $phone = null;
-    public int $idLanguage = 1;
+    public int $languageId = 1;
     public ?int $changePasswordToken = null;
     public ?string $changePasswordTokenExpirationDate = null;
     public ?int $changePasswordCurrentAttempt = 0;
@@ -38,6 +38,6 @@ class User extends MainEntity
     public ?string $lastConnexionAttempt = null;
     public string $dateChatConsent;
     public ?string $lastConnection = null;
-    public ?string $dateCreated = null;
-    public ?string $dateUpdated = null;
+    public ?string $createdAt = null;
+    public ?string $updatedAt = null;
 }
