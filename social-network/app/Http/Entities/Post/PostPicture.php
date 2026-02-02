@@ -7,7 +7,7 @@ use App\Http\Entities\MainEntity;
 class PostPicture extends MainEntity
 {
     public ?int $id;
-    public ?int $idPost;
+    public ?int $postId;
     public ?string $path;
     public ?string $status = 'active';
     public ?string $createdAt;

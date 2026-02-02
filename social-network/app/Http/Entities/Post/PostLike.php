@@ -7,8 +7,8 @@ use App\Http\Entities\MainEntity;
 class PostLike extends MainEntity
 {
     public ?int $id;
-    public ?int $idUser;
-    public ?int $idPost;
+    public ?int $userId;
+    public ?int $postId;
     public ?string $status = 'active';
     public ?string $createdAt;
     public ?string $updatedAt;

@@ -7,10 +7,9 @@ use App\Http\Entities\MainEntity;
 class PostShare extends MainEntity
 {
     public ?int $id = null;
-    public ?int $idPost = null;
-    public ?int $idUser = null;
-    public ?int $idUserReceiver = null;
-    public ?string $content = null;
+    public ?int $postId = null;
+    public ?int $userId = null;
+    public ?int $receiverUserId = null;
     public ?string $createdAt = null;
     
 }

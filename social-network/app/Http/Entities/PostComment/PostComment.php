@@ -7,8 +7,8 @@ use App\Http\Entities\MainEntity;
 class PostComment extends MainEntity
 {
     public ?int $id;
-    public ?int $idPost;
-    public ?int $idUser;
+    public ?int $postId;
+    public ?int $userId;
     public ?string $content;
     public ?int $replyToCommentId;
     public ?string $status = 'active';

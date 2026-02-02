@@ -7,10 +7,8 @@ use App\Http\Entities\MainEntity;
 class PostFeedback extends MainEntity
 {
     public ?int $id;
-    public ?int $idPost;
+    public ?int $targetUserId;
+    public ?int $rateId;
+    public ?int $sessionId;
     public ?string $content;
-    public ?int $idTargetUser;
-    public ?int $idSession;
-    public ?int $rate;
-    public ?string $sessionDuration;
 }
