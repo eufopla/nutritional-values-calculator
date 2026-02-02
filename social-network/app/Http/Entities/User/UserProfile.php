@@ -9,6 +9,7 @@ class UserProfile extends MainEntity
     public ?int $id = null;
     public ?int $userId = null;
     public ?string $userName = null;
-    public $profilePicture = null;
+    public ?string $profilePicture = null;
+    public ?string $biography = null;
     public ?string $updatedAt = null;
 }
