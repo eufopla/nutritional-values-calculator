@@ -2,9 +2,6 @@
 
 
 namespace App\Http\Tools;
-
-
-use App\Http\Models\Application\Schema;
 use Countable;
 use DateTime;
 use DateTimeZone;
@@ -673,48 +670,6 @@ class ToolsBox
     public static function imageEncode(string|null $image): string|null{
 
         return isset($image) ? base64_encode($image): null;
-
-    }
-
-    /**
-     * Uploads an image from the base.
-     *
-     * @param int $tableId The ID of the table.
-     * @param string $tableName The name of the table.
-     * @param string $imageType The type of the image.
-     * @param string $connection The database connection name.
-     *
-     * @return object|null        The uploaded image object, or null if not found.
-     */
-    public static function uploadImageFromBase(int    $tableId,
-                                               string $tableName,
-                                               string $imageType,
-                                               string $connection): object|null
-    {
-        return DB::connection($connection)
-            ->table(Schema::SPECIFIC_SCOPETENZA.'introduction as i')
-            ->where([
-                ['i.tableName', '=', $tableName],
-                ['i.tableId', '=', $tableId],
-            ])
-            ->select(
-                'i.'.$imageType.' as image' ,
-                'i.'.$imageType.'MimeType as mimeType',
-            )
-            ->first();
-    }
-
-    /**
-     * Loads the portal logo.
-     *
-     * @return string|null The encoded logo as a string if it exists, otherwise null.
-     */
-    public static function loadPortalLogo(): string|null
-    {
-        $logo = '/Users/julien/PhpstormProjects/scopetenza-back-lumen/public/template/image/lock.png';
-        $logo = file_get_contents($logo);
-
-        return ToolsBox::imageEncode($logo);
 
     }
 

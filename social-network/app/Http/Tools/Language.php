@@ -19,19 +19,4 @@ class Language extends MainModel
         }
     }
 
-    public static function getLanguage(): int {
-
-        $return = 0;
-
-        $language_code = Session::getLanguageCode();
-        $idLanguage = DB::connection('specific_db')
-            ->table(Schema::SPECIFIC_SCOPETENZA.'language')
-            ->where('code','=',$language_code)
-            ->select('id')
-            ->first();
-        if(isset($idLanguage)){
-            $return = $idLanguage->id;
-        }
-        return $return;
-    }
 }
