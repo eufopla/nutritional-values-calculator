@@ -1,14 +1,16 @@
 <?php
 
-namespace App\Http\Entities\Post;
+namespace App\Http\Entities\Community\PostComment;
 
 use App\Http\Entities\MainEntity;
 
-class PostLike extends MainEntity
+class PostComment extends MainEntity
 {
     public ?int $id;
-    public ?int $userId;
     public ?int $postId;
+    public ?int $userId;
+    public ?string $content;
+    public ?int $replyToCommentId;
     public ?string $status = 'active';
     public ?string $createdAt;
     public ?string $updatedAt;

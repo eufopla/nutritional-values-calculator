@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Entities\PostAnnoucement;
+namespace App\Http\Entities\Session;
 
 use App\Http\Entities\MainEntity;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Entities\Follow;
+namespace App\Http\Entities\Community\Follow;
 
 use App\Http\Entities\MainEntity;
 

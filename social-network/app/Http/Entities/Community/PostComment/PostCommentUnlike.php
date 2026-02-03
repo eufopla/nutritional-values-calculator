@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Entities\PostComment;
+namespace App\Http\Entities\Community\PostComment;
 
 use App\Http\Entities\MainEntity;
 
-class PostCommentLike extends MainEntity
+class PostCommentUnlike extends MainEntity
 {
     public ?int $id;
     public ?int $idUser;

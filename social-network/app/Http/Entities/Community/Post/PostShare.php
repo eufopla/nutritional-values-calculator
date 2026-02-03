@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Entities\Post;
+namespace App\Http\Entities\Community\Post;
 
 use App\Http\Entities\MainEntity;
 

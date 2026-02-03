@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Entities\PostFeedback;
+namespace App\Http\Entities\Community\PostFeedback;
 
 use App\Http\Entities\MainEntity;
 
