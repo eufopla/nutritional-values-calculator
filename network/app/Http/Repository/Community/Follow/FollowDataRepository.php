@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Repository\Follow;
+namespace App\Http\Repository\Community\Follow;
 
 use App\Exceptions\RepositoryException;
 use App\Http\Entities\Follow\Follow;

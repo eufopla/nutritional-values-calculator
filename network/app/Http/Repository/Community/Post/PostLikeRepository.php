@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Repository\Post;
+namespace App\Http\Repository\Community\Post;
 
 use App\Exceptions\RepositoryException;
 use App\Http\Entities\Post\PostLike;
