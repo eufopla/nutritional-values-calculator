@@ -1,3 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-800;
+  }
+  
+  body {
+    @apply bg-dark-500 text-white font-sans antialiased;
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(217, 70, 239, 0.1) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  /* Scrollbar personnalisée */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-500/30 rounded-full;
+    transition: background-color 0.2s;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500/50;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-primary-500/30 text-white;
+  }
+}
+
+@layer components {
+  /* Boutons */
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 
+           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-500;
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-primary-500 to-purple-600 
+           text-white shadow-glow hover:shadow-glow-lg 
+           hover:scale-105 focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply btn glass border border-primary-500/30 
+           text-primary-300 hover:bg-primary-500/10 
+           hover:border-primary-500/50 focus:ring-primary-500;
+  }
+
+  .btn-ghost {
+    @apply btn text-gray-300 hover:bg-white/5 
+           hover:text-white focus:ring-primary-500;
+  }
+
+  /* Inputs */
+  .input {
+    @apply w-full px-4 py-3 rounded-lg glass 
+           border border-primary-500/20 
+           text-white placeholder-gray-400
+           focus:outline-none focus:border-primary-500/50 
+           focus:shadow-glow-sm
+           transition-all duration-200;
+  }
+
+  /* Cards */
+  .card {
+    @apply glass rounded-2xl p-6 shadow-card 
+           border border-primary-500/10
+           transition-all duration-300
+           hover:border-primary-500/30
+           hover:shadow-glow;
+  }
+
+  .card-compact {
+    @apply glass rounded-xl p-4 shadow-card 
+           border border-primary-500/10;
+  }
+
+  /* Tags */
+  .tag {
+    @apply inline-flex items-center px-3 py-1 
+           rounded-full text-xs font-medium
+           glass border transition-all duration-200;
+  }
+
+  .tag-primary {
+    @apply tag border-primary-500/30 text-primary-300
+           hover:bg-primary-500/10 hover:border-primary-500/50;
+  }
+
+  .tag-secondary {
+    @apply tag border-secondary-500/30 text-secondary-300
+           hover:bg-secondary-500/10 hover:border-secondary-500/50;
+  }
+
+  .tag-cyan {
+    @apply tag border-accent-cyan/30 text-cyan-300
+           hover:bg-accent-cyan/10 hover:border-accent-cyan/50;
+  }
+
+  /* Avatar */
+  .avatar {
+    @apply rounded-full border-2 border-primary-500/50 
+           shadow-glow-sm overflow-hidden;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center justify-center
+           px-2 py-0.5 rounded-full text-xxs font-semibold
+           bg-gradient-to-r from-primary-500 to-purple-600
+           text-white shadow-glow-sm;
+  }
+
+  /* Navigation link */
+  .nav-link {
+    @apply flex items-center gap-2 px-4 py-2 rounded-lg
+           text-gray-300 hover:text-white hover:bg-white/5
+           transition-all duration-200
+           relative;
+  }
+
+  .nav-link.active {
+    @apply text-white bg-primary-500/10 
+           border-b-2 border-primary-500;
+  }
+
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Divider */
+  .divider {
+    @apply border-t border-primary-500/20 my-6;
+  }
+}
+
+@layer utilities {
+  /* Animations personnalisées */
+  .animate-particles {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-400 via-purple-400 to-secondary-400 
+           bg-clip-text text-transparent;
+  }
+
+  /* Backdrop effects */
+  .backdrop-custom {
+    backdrop-filter: blur(10px) saturate(180%);
+  }
+}
+
+/* Animations pour les particules en arrière-plan */
+@keyframes float-slow {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.5;
+  }
+  33% { 
+    transform: translate(100px, -100px) rotate(120deg);
+    opacity: 0.7;
+  }
+  66% { 
+    transform: translate(-50px, 50px) rotate(240deg);
+    opacity: 0.3;
+  }
+}
+
+/* Loading spinner */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  border: 3px solid rgba(139, 92, 246, 0.1);
+  border-top: 3px solid #8b5cf6;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin-slow 1s linear infinite;
+}
+
+/* Transition groups pour Vue */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.3s ease;
+}
+
+.slide-enter-from {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.slide-leave-to {
+  transform: translateX(100%);
+  opacity: 0;
+}

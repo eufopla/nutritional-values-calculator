@@ -1,19 +1,148 @@
 <template>
-  <div class="min-h-screen bg-gray-900 text-white">
-    <header class="p-4 border-b border-gray-800">
-      <h1 class="text-xl font-bold">Social Network</h1>
+  <div class="min-h-screen flex flex-col">
+    <!-- Header avec glassmorphism -->
+    <header class="glass-strong border-b border-primary-500/20 sticky top-0 z-50 backdrop-custom">
+      <div class="container-custom">
+        <!-- Barre supérieure avec logo et actions -->
+        <div class="flex items-center justify-between py-4">
+          <!-- Logo -->
+          <router-link to="/" class="flex items-center gap-3 group">
+            <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-purple-600 rounded-lg flex items-center justify-center shadow-glow group-hover:shadow-glow-lg transition-all">
+              <span class="text-2xl">📱</span>
+            </div>
+            <h1 class="text-2xl font-bold gradient-text">
+              FutureSocial
+            </h1>
+          </router-link>
+
+          <!-- Actions droite -->
+          <div class="flex items-center gap-4">
+            <!-- Recherche -->
+            <button class="btn-ghost p-2 rounded-lg">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </button>
+
+            <!-- Notifications -->
+            <button class="btn-ghost p-2 rounded-lg relative">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+              </svg>
+              <!-- Badge notification -->
+              <span class="absolute top-1 right-1 w-2 h-2 bg-primary-500 rounded-full animate-pulse-slow"></span>
+            </button>
+
+            <!-- Bouton Publier -->
+            <button class="btn-primary flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              </svg>
+              <span class="hidden sm:inline">Publier</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Navigation principale -->
+        <nav class="flex items-center gap-1 -mb-px overflow-x-auto">
+          <router-link 
+            to="/" 
+            class="nav-link"
+            active-class="active"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            <span>Fil d'actualité</span>
+          </router-link>
+
+          <router-link 
+            to="/sessions" 
+            class="nav-link"
+            active-class="active"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+            <span>Sessions</span>
+          </router-link>
+
+          <router-link 
+            to="/messages" 
+            class="nav-link"
+            active-class="active"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+            <span>Messages</span>
+          </router-link>
+
+          <router-link 
+            to="/profile" 
+            class="nav-link"
+            active-class="active"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+            <span>Profil</span>
+          </router-link>
+
+          <router-link 
+            to="/settings" 
+            class="nav-link"
+            active-class="active"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <span>Paramètres</span>
+          </router-link>
+        </nav>
+      </div>
     </header>
 
-    <main class="p-6">
-      <slot /> <!-- Ici passent les pages via router-view -->
+    <!-- Contenu principal -->
+    <main class="flex-1 overflow-x-hidden">
+      <div class="container-custom py-6">
+        <!-- Slot pour le contenu des pages -->
+        <slot />
+      </div>
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
-// rien de spécial pour l'instant
+import { ref } from 'vue'
+
+// État pour les notifications, crédits, etc.
+const hasNotifications = ref(true)
+const aiCredits = ref(42)
+const maxCredits = ref(100)
 </script>
 
 <style scoped>
-/* optionnel : styles spécifiques du layout */
+/* Styles additionnels si nécessaire */
+.nav-link {
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.nav-link.active {
+  color: white;
+  background: transparent;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, #d946ef, #8b5cf6);
+  box-shadow: 0 0 10px rgba(217, 70, 239, 0.5);
+}
 </style>
